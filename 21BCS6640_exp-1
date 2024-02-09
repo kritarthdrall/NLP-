@@ -1,0 +1,57 @@
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize, regexp_tokenize, TweetTokenizer , SpaceTokenizer
+
+
+nltk.download('punkt')
+
+
+
+text = input("Enter your text: ")
+
+
+word_tokens = word_tokenize(text)
+print("Word Tokenization:")
+print(word_tokens)
+
+
+tweet_tokenizer = TweetTokenizer()
+tweet_tokens = tweet_tokenizer.tokenize(text)
+print("\nTweet Tokenization:")
+print(tweet_tokens)
+
+
+space_tokenizer = SpaceTokenizer()
+space_tokens = space_tokenizer.tokenize(text)
+print("Space Tokenization:")
+print(space_tokens)
+
+
+text = input("maulik is building @pets app @CU")
+
+
+regexp_tokens = regexp_tokenize(text, pattern=r'\w+|\$[\d\.]+|\S+')
+print("\nRegExp Tokenization:")
+print(regexp_tokens)
+
+
+import re
+
+
+text = "maulik is building @pets app, @CU."
+pattern = r'\w+|\S'
+regexp_tokens = re.findall(pattern, text)
+
+
+print(regexp_tokens)
+
+
+
+text="@here is good #deal"
+tweet_tokenizer = TweetTokenizer()
+tweet_tokens = tweet_tokenizer.tokenize(text)
+print("\nTweet Tokenization:")
+print(tweet_tokens)
+
+
+
+
