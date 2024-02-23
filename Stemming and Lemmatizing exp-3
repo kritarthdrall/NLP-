@@ -1,0 +1,24 @@
+import nltk
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+# Sample text
+text = input("Enter text")
+
+# Tokenize the text
+words = word_tokenize(text)
+
+# Stemming using Porter Stemmer
+porter_stemmer = PorterStemmer()
+stemmed_words = [porter_stemmer.stem(word) for word in words]
+
+print("Stemmed Words:")
+print(stemmed_words)
+
+# Lemmatization using WordNet Lemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
+lemmatized_words = [wordnet_lemmatizer.lemmatize(word) for word in words]
+
+print("\nLemmatized Words:")
+print(lemmatized_words)
+
